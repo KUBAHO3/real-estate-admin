@@ -1,5 +1,5 @@
 import { Add } from "@mui/icons-material";
-import { useList } from "@pankod/refine-core/dist/hooks";
+import { useTable } from "@pankod/refine-core";
 import { Box, Stack, Typography } from "@pankod/refine-mui";
 import { useNavigate } from "@pankod/refine-react-router-v6";
 
@@ -7,6 +7,12 @@ import { PropertyCard, CustomButton } from "components";
 
 const AllProperties = () => {
   const navigate = useNavigate();
+
+  const {
+    tableQueryResult: { data, isLoading, isError }
+  } = useTable();
+
+  console.log(data);
 
   return (
     <Box>
@@ -20,6 +26,10 @@ const AllProperties = () => {
           color="#fcfcfc"
           icon={<Add/>}/>
       </Stack>
+
+      <Box mt="20px" sx={{ display: 'flex', flexWrap: 'wrap', gap: 3}}>
+
+      </Box>
     </Box>
   )
 }
