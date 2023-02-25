@@ -2,6 +2,7 @@ import { Add } from "@mui/icons-material";
 import { useTable } from "@pankod/refine-core";
 import { Box, Stack, Typography, TextField, Select, MenuItem } from "@pankod/refine-mui";
 import { useNavigate } from "@pankod/refine-react-router-v6";
+import { useMemo } from 'react';
 
 import { PropertyCard, CustomButton } from "components";
 
@@ -26,6 +27,14 @@ const AllProperties = () => {
     setSorter([{ field, order: currentPrice === 'asc' ? 'desc' : 'asc' }])
   }
   
+  const currentFilterValues = useMemo(() => {
+    const logicalFilters = filters.flatMap((item) => ('field' in item ? item : []));
+  
+    return {
+      title: logicalFilters.find((item) => item.field === 'title')?.value || '',
+    }
+  }, [filters])
+
   if(isLoading) return <Typography>Loading...</Typography>
   if(isError) return <Typography>Error Ocured...</Typography>
 
@@ -49,8 +58,16 @@ const AllProperties = () => {
             variant="outlined"
             color="info"
             placeholder="Search by title"
-            value=''
-            onChange={() => {}}
+            value={currentFilterValues.title}
+            onChange={(e) => {
+              setFilters([
+                {
+                  field: 'title',
+                  operator: 'contains',
+                  value: e.currentTarget.value ? e.currentTarget.value : undefined
+                }
+              ])
+            }}
           />
           <Select 
             variant="outlined"
