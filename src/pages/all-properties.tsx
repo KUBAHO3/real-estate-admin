@@ -64,7 +64,22 @@ const AllProperties = () => {
             onChange={(e) => {
               setFilters([
                 {
-                  field: 'title',
+                  field:  'title',
+                  operator: 'contains',
+                  value: e.currentTarget.value ? e.currentTarget.value : undefined
+                }
+              ])
+            }}
+          />
+          <TextField 
+            variant="outlined"
+            color="info"
+            placeholder="Search by location"
+            value={currentFilterValues.location}
+            onChange={(e) => {
+              setFilters([
+                {
+                  field:  'location',
                   operator: 'contains',
                   value: e.currentTarget.value ? e.currentTarget.value : undefined
                 }
