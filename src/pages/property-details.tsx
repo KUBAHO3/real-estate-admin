@@ -5,7 +5,7 @@ import { ChatBubble, Delete, Edit, Phone, Place, Star } from '@mui/icons-materia
 
 import { CustomButton } from 'components';
 
-const propertyDetails = () => {
+const PropertyDetails = () => {
   const navigate = useNavigate();
   const { data: user } = useGetIdentity();
   const { id } = useParams();
@@ -13,9 +13,12 @@ const propertyDetails = () => {
   const { queryResult } = useShow();
   
   const { data, isLoading, isError } = queryResult;
+
+  console.log(data);
+
   return (
     <div>Property details</div>
   )
 }
 
-export default propertyDetails
+export default PropertyDetails
