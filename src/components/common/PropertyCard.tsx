@@ -8,7 +8,7 @@ const PropertyCard = ({ id, title, location, price, photo}: PropertyCardProps) =
   return (
     <Card
       component={Link}
-      to={`/properties/${id}`}
+      to={`/properties/show/${id}`}
       sx={{
         maxWidth: '330px',
         padding: '10px',
