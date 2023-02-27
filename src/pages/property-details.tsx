@@ -1,9 +1,17 @@
-import { Typography, Box, Stack } from '@pankod/refine-mui';
-import { useDelete, useGetIdentity,useShow } from '@pankod/refine-core';
-import { useParams, useNavigate } from '@pankod/refine-react-router-v6';
-import { ChatBubble, Delete, Edit, Phone, Place, Star } from '@mui/icons-material';
+/* eslint-disable no-restricted-globals */
+import { Typography, Box, Stack } from "@pankod/refine-mui";
+import { useDelete, useGetIdentity, useShow } from "@pankod/refine-core";
+import { useParams, useNavigate } from "@pankod/refine-react-router-v6";
+import {
+    ChatBubble,
+    Delete,
+    Edit,
+    Phone,
+    Place,
+    Star,
+} from "@mui/icons-material";
 
-import { CustomButton } from 'components';
+import { CustomButton } from "components";
 
 function checkImage(url: any) {
     const img = new Image();
@@ -12,48 +20,47 @@ function checkImage(url: any) {
 }
 
 const PropertyDetails = () => {
-  const navigate = useNavigate();
-  const { data: user } = useGetIdentity();
-  const { id } = useParams();
-  const { mutate } = useDelete();
-  const { queryResult } = useShow();
-  
-  const { data, isLoading, isError } = queryResult;
+    const navigate = useNavigate();
+    const { data: user } = useGetIdentity();
+    const { queryResult } = useShow();
+    const { mutate } = useDelete();
+    const { id } = useParams();
 
-  console.log(data);
-  const propertyDetails = data?.data ?? {};
+    const { data, isLoading, isError } = queryResult;
 
-  if (isLoading) {
-      return <div>Loading...</div>;
-  }
+    const propertyDetails = data?.data ?? {};
 
-  if (isError) {
-      return <div>Something went wrong!</div>;
-  }
-  
-  const isCurrentUser = user.email === propertyDetails.creator.email;
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
+
+    if (isError) {
+        return <div>Something went wrong!</div>;
+    }
+
+    const isCurrentUser = user.email === propertyDetails.creator.email;
 
     const handleDeleteProperty = () => {
-        // const response = confirm (
-        //     "Are you sure you want to delete this property?",
-        // );
-        // if (response) {
-        //     mutate(
-        //         {
-        //             resource: "properties",
-        //             id: id as string,
-        //         },
-        //         {
-        //             onSuccess: () => {
-        //                 navigate("/properties");
-        //             },
-        //         },
-        //     );
-        // }
+        const response = confirm(
+            "Are you sure you want to delete this property?",
+        );
+        if (response) {
+            mutate(
+                {
+                    resource: "properties",
+                    id: id as string,
+                },
+                {
+                    onSuccess: () => {
+                        navigate("/properties");
+                    },
+                },
+            );
+        }
     };
 
-  return (
-    <Box
+    return (
+        <Box
             borderRadius="15px"
             padding="20px"
             bgcolor="#FCFCFC"
@@ -67,10 +74,9 @@ const PropertyDetails = () => {
                 mt="20px"
                 display="flex"
                 flexDirection={{ xs: "column", lg: "row" }}
-                justifyContent="space-between"
                 gap={4}
             >
-                <Box flex={1} maxWidth={764} >
+                <Box flex={1} maxWidth={764}>
                     <img
                         src={propertyDetails.photo}
                         alt="property_details-img"
@@ -183,7 +189,6 @@ const PropertyDetails = () => {
                     display="flex"
                     flexDirection="column"
                     gap="20px"
-                    paddingLeft={10}
                 >
                     <Stack
                         width="100%"
@@ -318,7 +323,7 @@ const PropertyDetails = () => {
                 </Box>
             </Box>
         </Box>
-  )
-}
+    );
+};
 
-export default PropertyDetails
+export default PropertyDetails;
