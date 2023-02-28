@@ -8,10 +8,36 @@ const Agents = () => {
     resource: 'users'
   })
 
-  const allAgents = data?.dta;
+  const allAgents = data?.data ?? [];
 
+  if(isLoading) return <div>Loading...</div>
+  if(isError) return <div>Loading...</div>
   return (
-    <div>agent</div>
+    <Box>
+      <Typography fontSize={25} fontWeight={700} color="#11142d">
+        Agent Lists
+      </Typography>
+      <Box
+        mt="20px"
+        sx={{
+          display: 'flex',
+          frexWrap: 'wrap',
+          gap: '20px',
+          backgroundColor: '#fcfcfc',
+        }}
+      >{allAgents.map((agent) =>(
+        <AgentCard 
+          key={agent._id}
+          id={agent._id}
+          name={agent.name}
+          email={agent.email}
+          avatar={agent.avatar}
+          noOfProperties={agent.noOfProperties}
+        />
+      ))}
+
+      </Box>
+    </Box>
   )
 }
 
