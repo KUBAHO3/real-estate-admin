@@ -1,6 +1,6 @@
 import React from 'react'
-
-const AgentCard = () => {
+import { AgentCardProp, InfoBarProps } from 'interfaces/agent'
+const AgentCard = ({id, name, email, avatar, noOfProperties}: AgentCardProp) => {
   return (
     <div>AgentCard</div>
   )
