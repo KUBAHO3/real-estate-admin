@@ -19,7 +19,13 @@ const AgentProfile = () => {
     if (isError) return <div>error...</div>;
 
     return (
-        <div>Hello Profile</div>
+        <Profile
+            type="Agent"
+            name={myProfile.name}
+            email={myProfile.email}
+            avatar={myProfile.avatar}
+            properties={myProfile.allProperties}
+        />
     );
 };
 
