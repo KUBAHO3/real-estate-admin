@@ -6,6 +6,25 @@ import { Link } from "@pankod/refine-react-router-v6";
 import { AgentCardProp, InfoBarProps } from "interfaces/agent";
 
 
+function checkImage(url: any) {
+  const img = new Image();
+  img.src = url;
+  return img.width !== 0 && img.height !== 0;
+}
+
+const InfoBar = ({ icon, name }: InfoBarProps) => (
+  <Stack
+      flex={1}
+      minWidth={{ xs: "100%", sm: 300 }}
+      gap={1.5}
+      direction="row"
+  >
+      {icon}
+      <Typography fontSize={14} color="#808191">
+          {name}
+      </Typography>
+  </Stack>
+);
 
 
 const AgentCard = ({
