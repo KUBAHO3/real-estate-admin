@@ -250,7 +250,7 @@ const PropertyDetails = () => {
                                     fontWeight={400}
                                     color="#808191"
                                 >
-                                    North Carolina, USA
+                                    Kigali City, RWANDA
                                 </Typography>
                             </Stack>
 
