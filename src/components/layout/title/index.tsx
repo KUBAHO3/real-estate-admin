@@ -9,12 +9,12 @@ export const Title: React.FC<TitleProps> = ({ collapsed }) => {
     <Button fullWidth variant="text" disableRipple>
       <Link to="/">
         {collapsed ? (
-          // <img src="/refine-collapsed.svg" alt="Refine" width="28px" />
-          <Typography variant="h5" component="div" sx={{ fontWeight: 700 }}>
-            🏘️
-          </Typography>
+          <img src="/Heaven-logo.jpg" alt="Heaven" width="80px" />
+          // <Typography variant="h5" component="div" sx={{ fontWeight: 700 }}>
+          //   🏘️
+          // </Typography>
         ) : (
-          // <img src="/refine.svg" alt="Refine" width="140px" />
+          // <img src="/Heaven-logo.jpg" alt="Heaven" width="140px" />
           <Typography variant="h5" component="div" sx={{ flexGrow: 1, color: "blue", fontWeight: 700 }}>
             Heaven
           </Typography>
