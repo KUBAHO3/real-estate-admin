@@ -27,10 +27,10 @@ After you're finished please remove all the comments and instructions!
 
 <div align="center">
   <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <!-- <img src="murple_logo.png" alt="logo" width="140"  height="auto" /> -->
+  <img src="public/Heaven-logo.jpg" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>My Portfolio</b></h3>
+  <h3><b>Real Estate Admin</b></h3>
 
 </div>
 
@@ -63,13 +63,16 @@ After you're finished please remove all the comments and instructions!
 
 # 📖 My Portfolio <a name="about-project"></a>
 
-This project is about creating a personal portfolio to showcase my activities, background and experience.
+This project is designed for academoic purpose and can be extended for real life solution in future.
 
-**My Portfolio** is a simple Html&CSS-based portfolio
+**My Portfolio** is a simple MERN stack with Refine-based project
 
 ## :hammer_and_wrench: Built With <a name="built-with"></a>
-- HTML
-- CSS
+- MongoDB
+- React
+- Express
+- NodeJs
+- Refine
 ### Tech Stack <a name="tech-stack"></a>
 <details>
   <summary>Version Control</summary>
@@ -86,8 +89,8 @@ This project is about creating a personal portfolio to showcase my activities, b
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://html.com/html5/">HTML5</a></li>
-    <li><a href="https://www.css3.com/">CSS</a></li>
+    <li><a href="https://reactjs.org/">React</a></li>
+    <li><a href="https://mui.com/">MUI</a></li>
   </ul>
 </details>
 
@@ -95,19 +98,18 @@ This project is about creating a personal portfolio to showcase my activities, b
 
 ### Key Features <a name="key-features"></a>
 
-- **Linters SetUp**
-- **Follow HTML and CSS best practice**
-- **Display Text**
-- **Display Cards**
-- **Display Text**
-- **Hoover Buttons**
-- **Desktop Version**
-- **Include Animations**
-- **Deployed with GithubPages**
-- **Mobile Nav**
-- **Detail modal**
-- **Email validation**
-- **store form data in local storage**
+- **Create Properties**
+- **View Properties**
+- **Update Properties**
+- **Delete Properties**
+- **Login with Google**
+- **View Agents**
+- **My Profile**
+- **Property Details**
+- **Pagination**
+- **Filter and Sorting**
+- **Search by Name and Location**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -165,8 +167,8 @@ Install this project with:
 npm
 Example command:
 ```sh
-  cd my-project
-  npm init -y
+  cd client
+  Yarn dev
 ```
 ### Usage
 To run the project, execute the following command:
@@ -224,7 +226,7 @@ I would like to thank Microverse for this exercise.
 ## :question: FAQ (OPTIONAL) <a name="faq"></a><br/>
 - **How long can it take to build that project**
 
-  - 1-2hrs according to personal skills
+  - 1-2Months according to personal skills
 
 - **Where to find figma for that project!**
 
