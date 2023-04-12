@@ -165,7 +165,7 @@ const PropertyDetails = () => {
                                         color="#808191"
                                         mb={0.5}
                                     >
-                                        for one day
+                                        per month
                                     </Typography>
                                 </Stack>
                             </Box>
