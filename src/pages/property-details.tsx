@@ -314,6 +314,7 @@ const PropertyDetails = () => {
 
                     <Box>
                         <CustomButton
+                            handleClick={()=> navigate(`/properties/show/${id}/book`)}
                             title="Book Now"
                             backgroundColor="#475BE8"
                             color="#FCFCFC"

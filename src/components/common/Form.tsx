@@ -45,6 +45,140 @@ const Form = ({ type, register, handleSubmit, handleImageChange, formLoading, on
           </FormControl>
 
           <Stack direction="row" gap={4}>
+            <FormControl>
+                <FormHelperText
+                    sx={{
+                        fontWeight: 500,
+                        margin: "10px 0",
+                        fontSize: 16,
+                        color: "#11142d",
+                    }}
+                >
+                    Enter rooms:
+                </FormHelperText>
+                <TextField
+                    fullWidth
+                    required
+                    id="outlined-basic"
+                    color="info"
+                    type="number"
+                    variant="outlined"
+                    {...register("rooms", { required: true })}
+                />
+            </FormControl>
+            <FormControl>
+                <FormHelperText
+                    sx={{
+                        fontWeight: 500,
+                        margin: "10px 0",
+                        fontSize: 16,
+                        color: "#11142d",
+                    }}
+                >
+                    Enter baths:
+                </FormHelperText>
+                <TextField
+                    fullWidth
+                    required
+                    id="outlined-basic"
+                    color="info"
+                    type="number"
+                    variant="outlined"
+                    {...register("baths", { required: true })}
+                />
+                </FormControl>
+                <FormControl>
+                <FormHelperText
+                    sx={{
+                        fontWeight: 500,
+                        margin: "10px 0",
+                        fontSize: 16,
+                        color: "#11142d",
+                    }}
+                >
+                    Enter Area:
+                </FormHelperText>
+                <TextField
+                    fullWidth
+                    required
+                    id="outlined-basic"
+                    color="info"
+                    type="number"
+                    variant="outlined"
+                    {...register("area", { required: true })}
+                />
+                </FormControl>
+                <FormControl sx={{ flex: 1 }}>
+                  <FormHelperText
+                      sx={{
+                          fontWeight: 500,
+                          margin: "10px 0",
+                          fontSize: 16,
+                          color: "#11142d",
+                      }}
+                  >
+                      Rent Frequency:
+                  </FormHelperText>
+                  <Select
+                      variant="outlined"
+                      color="info"
+                      displayEmpty
+                      required
+                      inputProps={{ "aria-label": "Without label" }}
+                      defaultValue="Monthly"
+                      {...register("rentFrequency", {
+                          required: true,
+                      })}
+                  >
+                      <MenuItem value="monthly">furnitured</MenuItem>
+                      <MenuItem value="Yearly">Yearly</MenuItem>
+                  </Select>
+              </FormControl>
+              <FormControl sx={{ flex: 1 }}>
+                  <FormHelperText
+                      sx={{
+                          fontWeight: 500,
+                          margin: "10px 0",
+                          fontSize: 16,
+                          color: "#11142d",
+                      }}
+                  >
+                      Is it furnitured:
+                  </FormHelperText>
+                  <Select
+                      variant="outlined"
+                      color="info"
+                      displayEmpty
+                      required
+                      inputProps={{ "aria-label": "Without label" }}
+                      defaultValue="true"
+                      {...register("furnishingStatus", {
+                          required: true,
+                      })}
+                  >
+                      <MenuItem value="furnitured">furnitured</MenuItem>
+                      <MenuItem value="Not furnitured">Not furnitured</MenuItem>
+                  </Select>
+              </FormControl>
+          </Stack>
+
+          <FormControl>
+            <FormHelperText
+              sx={{fontWeight: 500, margin: '10px', fontSize: 16, color: '#11142d'}}
+            >Enter Amenities:</FormHelperText>
+            <TextField
+              fullWidth
+              required
+              id="outlined-basic"
+              color="info"
+              variant="outlined"
+             {...register('amenities',{
+              required: true,
+             })} 
+            />
+          </FormControl>
+
+          <Stack direction="row" gap={4}>
               <FormControl sx={{ flex: 1 }}>
                   <FormHelperText
                       sx={{

@@ -34,6 +34,7 @@ import {
   PropertyDetails,
   AllProperties,
   CreateProperty,
+  BookProperty,
   AgentProfile,
   EditProperty,
 } from "pages/index";
@@ -136,6 +137,7 @@ function App() {
               name: "properties",
               list: AllProperties,
               show: PropertyDetails,
+              // book: BookProperty,
               create: CreateProperty,
               edit: EditProperty,
               icon: <VillaOutlined/>,
